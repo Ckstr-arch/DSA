@@ -11,7 +11,11 @@ while True:
     if index >= 0 and index <= len(arr)+1:
         break
 
-value = int(input("Enter the value to be inserted : "))
-arr.insert(index, value)
+value = int(input("Enter the value to insert : "))
+
+for j in range(len(arr)-1, index-1, -1):
+    arr[j] = arr[j-1]
+
+arr[index] = value
 
 print("Updated Array:", arr)
