@@ -1,8 +1,16 @@
 arr = [25, 12, 58, 21, 46, 7]
 
-for i in range(len(arr)):
-    for j in range(0, len(arr) - i - 1):
-        if arr[j] < arr[j + 1]:
-            arr[j], arr[j + 1] = arr[j + 1], arr[j]
+n = len(arr)
 
-print(arr)
+for i in range(n):
+    max_index = i
+
+    for j in range(i+1, n):
+
+
+        if arr[j] > arr[max_index]:
+            max_index = j
+
+    arr[i], arr[max_index] = arr[max_index], arr[i]
+
+print("Sorted array:", arr)  

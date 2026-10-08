@@ -1,14 +1,15 @@
-def selection_sort_with_min(arr):
-    n = len(arr)
-    for i in range(n - 1):
-        min_val = min(arr[i:])
-        
-        min_index = i + arr[i:].index(min_val)
-        
-        arr[i], arr[min_index] = arr[min_index], arr[i]
-    return arr
+arr = [25, 12, 58, 21, 46, 7]
 
-test_arr = [42, 17, 35, 17, 63, 8, 42, 25]
+n = len(arr)
 
-sorted_arr = selection_sort_with_min(test_arr.copy())
-print("Sorted Array:", sorted_arr)
+for i in range(n):
+    # Find minimum value in the unsorted portion
+    minimum = min(arr[i:])
+
+    # Find the index of that minimum value
+    min_index = arr.index(minimum, i)
+
+    # Swap
+    arr[i], arr[min_index] = arr[min_index], arr[i]
+
+print("Sorted array:", arr)

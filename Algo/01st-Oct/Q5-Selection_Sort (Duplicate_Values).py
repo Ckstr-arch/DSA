@@ -1,16 +1,14 @@
-arr = [25, 12, 58, 21, 46, 7]
+arr = [42, 17, 35, 17, 63, 8, 42, 25]
 
 n = len(arr)
 
-for i in range(n):
+for i in range(n-1):
     min_index = i
 
-    for j in range(i+1, n):
-
-
+    for j in range(i + 1, n):
         if arr[j] < arr[min_index]:
             min_index = j
 
     arr[i], arr[min_index] = arr[min_index], arr[i]
 
-print("Sorted array:", arr)  
+print("Sorted array:", arr)
