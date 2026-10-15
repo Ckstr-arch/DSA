@@ -16,4 +16,4 @@ result = liear_search(arr, target)
 if result == -1:
     print("Target Not Found")
 else:
-    print("et voilà")
+    print("et voilà", result)

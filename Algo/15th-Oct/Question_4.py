@@ -12,17 +12,19 @@ def binary_search(arr, target):
         mid = (low + high) // 2
 
         if arr[mid] == target:
-            return (f"Position: {mid} # Comparisions: {comp}")
+            return mid, comp
         elif arr[mid] < target:
             low = mid + 1
         else:
             high = mid - 1
 
-    return -1
+    return -1,comp
 
-result = binary_search(arr, user_query)
+result, comp = binary_search(arr, user_query)
 
 if result == -1:
-    print("Target not found!")
+    print("Number not Found")
 else:
-    print(f"et voilà. Target is at {result}")
+    print(f"Target found at index {result}")
+
+print(f"Total comparisons: {comp}")
